@@ -7,6 +7,8 @@ import { useSelector } from 'react-redux';
 const KoreaContainer = () => {
     const [covidState, setCovidState] = useState(null);
     const [covidLocate, setCovidLocate] = useState([]);
+    const [newConfirmedNum, setNewConfiremdNum] = useState(null);
+
     const [covidOption, setCovidOption] = useState("신규 확진자순");
 
     const { isContact } = useSelector(({ contactData }) => ({
@@ -22,8 +24,6 @@ const KoreaContainer = () => {
         const loadCovidState = async () => {
             const response = await axios.get('http://3.34.132.140:8080/v1/data/infection');
             setCovidState(response.data);
-
-            console.log(response.data);
         }
         loadCovidState();
     }, []);
@@ -39,8 +39,7 @@ const KoreaContainer = () => {
             locates.forEach((v, index) => v["imgURL"] = `/images/area/area${index + 1}.png`);
 
             setCovidLocate(locates);
-
-            setCovidState({ ...covidState, "newCntUp": response.data.list[18].incDec });
+            setNewConfiremdNum(response.data.list[18].incDec)
         }
         loadCovidLocate();
     }, []);
@@ -56,13 +55,14 @@ const KoreaContainer = () => {
     return (
         <>
             {
-                covidState && covidLocate
+                covidState && covidLocate && newConfirmedNum
                     ?
                     (
                         < Korea
                             covidState={covidState}
                             covidLocate={covidLocate}
                             covidOption={covidOption}
+                            newConfirmedNum={newConfirmedNum}
                             setCovidOption={setCovidOption}
                             insertDot={insertDot} />
                     )

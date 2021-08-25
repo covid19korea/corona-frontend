@@ -9,8 +9,10 @@ const Korea = ({
     covidOption,
     setCovidOption,
     insertDot,
+    newConfirmedNum,
 }) => {
 
+    console.log("happy", covidState);
     if (covidOption === "신규 확진자순") {
         covidLocate.sort((a, b) => Number(a.incDec) > Number(b.incDec) ? -1 : 1);
     }
@@ -101,7 +103,7 @@ const Korea = ({
                 </CovidState>
                 <NewCovid>
                     <div className="newCovid_tit">오늘 신규 확진자 수는</div>
-                    <div className="newCovid_value">{covidState.newCntUp}</div>
+                    <div className="newCovid_value">{newConfirmedNum}</div>
                     <div className="newCovid_tit">명 입니다.</div>
                 </NewCovid>
                 <CovidLocate>
