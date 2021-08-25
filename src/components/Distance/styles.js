@@ -224,6 +224,10 @@ export const DistanceState = styled.div`
                 top:390px;
                 left:490px;
             }
+            .jeju{
+                top:600px;
+                left:140px;
+            }
         }   
     }
     .distance_subInfo{
