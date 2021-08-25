@@ -17,9 +17,6 @@ const Distance =
         clickStageIdx,
         setClickStageIdx,
     }) => {
-
-
-
         return (
             <MainBox>
                 <HeaderContainer />
@@ -101,6 +98,10 @@ const Distance =
                                 <div className={clickLocalBox === "ulsan" ? "localBox ulsan menuOn" : "localBox ulsan"} onClick={() => onClickLocalBox("ulsan")}>
                                     <div className="localBoxTit">울산</div>
                                     <div className={`localBoxLevel level${distance.ulsan}`}>{distance.ulsan}</div>
+                                </div>
+                                <div className={clickLocalBox === "jeju" ? "localBox jeju menuOn" : "localBox jeju"} onClick={() => onClickLocalBox("jeju")}>
+                                    <div className="localBoxTit">제주</div>
+                                    <div className={`localBoxLevel level${distance.jeju}`}>{distance.jeju}</div>
                                 </div>
                             </div>
                         </div>
