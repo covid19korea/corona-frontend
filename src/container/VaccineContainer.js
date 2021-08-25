@@ -15,7 +15,6 @@ const VaccineContainer = () => {
         isContact: contactData.contact,
     }))
 
-
     if (allVaccine && anyVaccine) {
         const mapContent = document.querySelector('.vaccineMap_content');
 
@@ -24,15 +23,13 @@ const VaccineContainer = () => {
         }
     };
 
-
     let insertDot = (value) => {
+        value = String(value);
         if (value.length <= 3) {
             return value;
         }
         return insertDot(value.slice(0, value.length - 3)) + ',' + value.slice(value.length - 3);
     };
-
-
 
     const population = {
         total: 51672400,
@@ -57,36 +54,22 @@ const VaccineContainer = () => {
 
     useEffect(() => {
         const loadVaccineAll = async () => {
-            const response = await axios.get('https://secret-ocean-49799.herokuapp.com/https://nip.kdca.go.kr/irgd/cov19stats.do?list=all');
-
-            let XMLParser = require('react-xml-parser');
-            let xml = new XMLParser().parseFromString(response.data);    // Assume xmlText contains the example XML
-
-            let items = xml.children[0].children[1].children;
-            let res = items.map(v => v.children);
-
-            setAllVaccine(res);
+            const response = await axios.get("http://3.34.132.140:8080/v1/data/inoculation");
+            setAllVaccine(response.data);
         }
-
-        const loadVaccineAny = async () => {
-            const response = await axios.get('https://secret-ocean-49799.herokuapp.com/https://nip.kdca.go.kr/irgd/cov19stats.do?list=sido');
-
-            let XMLParser = require('react-xml-parser');
-            let xml = new XMLParser().parseFromString(response.data);    // Assume xmlText contains the example XML
-
-            let items = xml.children[0].children[1].children;
-
-            let res = items.map(v => v.children);
-
-            setAnyVaccine(res);
-        }
-
         loadVaccineAll();
-        loadVaccineAny();
     }, []);
 
     useEffect(() => {
+        const loadVaccineAny = async () => {
+            const response = await axios.get("http://3.34.132.140:8080/v1/data/inoculation-region");
+            setAnyVaccine(response.data.list);
+        }
+        loadVaccineAny();
+    }, []);
 
+
+    useEffect(() => {
         function numberCounter(target_frame, target_number) {
             this.count = 0;
             this.diff = 0;
@@ -151,7 +134,3 @@ const VaccineContainer = () => {
 };
 
 export default VaccineContainer;
-
-
-// https://nip.kdca.go.kr/irgd/cov19stats.do?list=all
-// https://nip.kdca.go.kr/irgd/cov19stats.do?list=sido

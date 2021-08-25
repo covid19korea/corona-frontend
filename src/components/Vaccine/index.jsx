@@ -27,28 +27,27 @@ const Vaccine =
                                 <div className="vaccine_itemTit">전국 1차 접종자</div>
                                 <div className="vaccine_num">
                                     <div className="vaccine_circle">
-                                        <PercentCircle percentage={(allVaccine[2][1].value / population.total * 100).toFixed(2)} />
+                                        <PercentCircle percentage={(allVaccine.firstCnt / population.total * 100).toFixed(2)} />
                                     </div>
                                     <div className="vaccine_data">
-                                        <div className="vaccine_itemValue">{insertDot(allVaccine[2][1].value)}</div>
+                                        <div className="vaccine_itemValue">{insertDot(allVaccine.firstCnt)}</div>
                                         <div className="vaccine_rate">
-                                            <div className="vaccine_itemComp">{insertDot(allVaccine[0][1].value)}</div>
+                                            <div className="vaccine_itemComp">{insertDot(allVaccine.firstCntUp)}</div>
                                             <img className="vaccineImg" src="/images/icons/icoUp.png" alt="" />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div className="vaccine_item">
-
                                 <div className="vaccine_itemTit">전국 접종 완료자</div>
                                 <div className="vaccine_num">
                                     <div className="vaccine_circle">
-                                        <PercentCircle percentage={(allVaccine[2][2].value / population.total * 100).toFixed(2)} />
+                                        <PercentCircle percentage={(allVaccine.secondCnt / population.total * 100).toFixed(2)} />
                                     </div>
                                     <div className="vaccine_data">
-                                        <div className="vaccine_itemValue">{insertDot(allVaccine[2][2].value)}</div>
+                                        <div className="vaccine_itemValue">{insertDot(allVaccine.secondCnt)}</div>
                                         <div className="vaccine_rate">
-                                            <div className="vaccine_itemComp">{insertDot(allVaccine[0][2].value)}</div>
+                                            <div className="vaccine_itemComp">{insertDot(allVaccine.secondCntUp)}</div>
                                             <img className="vaccineImg" src="/images/icons/icoUp.png" alt="" />
                                         </div>
                                     </div>
@@ -56,6 +55,7 @@ const Vaccine =
                             </div>
                         </div>
                     </VaccineState>
+
                     <VaccineMap>
                         <div className="vaccineMap_tit">시·도별 백신접종현황</div>
                         <div className="vaccineMap_option">
@@ -88,15 +88,15 @@ const Vaccine =
                                 {
                                     menuOn === "1차 접종" ?
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[8][2].value / population.gyeonggi * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[8].firstTot / population.gyeonggi * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[8][2].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[8].firstTot)}</div>)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[8][4].value / population.gyeonggi * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[8].secondTot / population.gyeonggi * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[8][4].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[8].secondTot)}</div>)
                                         )
                                 }
                             </div>
@@ -105,15 +105,15 @@ const Vaccine =
                                 {
                                     menuOn === "1차 접종" ?
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[3][2].value / population.incheon * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[3].firstTot / population.incheon * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[3][2].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[3].firstTot)}</div>)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[3][4].value / population.incheon * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[3].secondTot / population.incheon * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[3][4].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[3].secondTot)}</div>)
                                         )
                                 }
                             </div>
@@ -122,15 +122,15 @@ const Vaccine =
                                 {
                                     menuOn === "1차 접종" ?
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[9][2].value / population.gangwon * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[9].firstTot / population.gangwon * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[9][2].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[9].firstTot)}</div>)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[9][4].value / population.gangwon * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[9].secondTot / population.gangwon * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[9][4].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[9].secondTot)}</div>)
                                         )
                                 }
                             </div>
@@ -139,15 +139,15 @@ const Vaccine =
                                 {
                                     menuOn === "1차 접종" ?
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[0][2].value / population.seoul * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[0].firstTot / population.seoul * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[0][2].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[0].firstTot)}</div>)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[0][4].value / population.seoul * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[0].secondTot / population.seoul * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[0][4].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[0].secondTot)}</div>)
                                         )
                                 }
                             </div>
@@ -156,15 +156,15 @@ const Vaccine =
                                 {
                                     menuOn === "1차 접종" ?
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[10][2].value / population.chungbuk * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[10].firstTot / population.chungbuk * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[10][2].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[10].firstTot)}</div>)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[10][4].value / population.chungbuk * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[10].secondTot / population.chungbuk * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[10][4].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[10].secondTot)}</div>)
                                         )
                                 }
                             </div>
@@ -173,15 +173,15 @@ const Vaccine =
                                 {
                                     menuOn === "1차 접종" ?
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[14][2].value / population.gyeongbuk * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[14].firstTot / population.gyeongbuk * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[14][2].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[14].firstTot)}</div>)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[14][4].value / population.gyeongbuk * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[14].secondTot / population.gyeongbuk * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[14][4].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[14].secondTot)}</div>)
                                         )
                                 }
                             </div>
@@ -190,15 +190,15 @@ const Vaccine =
                                 {
                                     menuOn === "1차 접종" ?
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[2][2].value / population.daegu * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[2].firstTot / population.daegu * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[2][2].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[2].firstTot)}</div>)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[2][4].value / population.daegu * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[2].secondTot / population.daegu * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[2][4].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[2].secondTot)}</div>)
                                         )
                                 }
                             </div>
@@ -207,15 +207,15 @@ const Vaccine =
                                 {
                                     menuOn === "1차 접종" ?
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[5][2].value / population.daejeon * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[5].firstTot / population.daejeon * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[5][2].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[5].firstTot)}</div>)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[5][4].value / population.daejeon * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[5].secondTot / population.daejeon * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[5][4].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[5].secondTot)}</div>)
                                         )
                                 }
                             </div>
@@ -224,15 +224,15 @@ const Vaccine =
                                 {
                                     menuOn === "1차 접종" ?
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[7][2].value / population.sejong * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[7].firstTot / population.sejong * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[7][2].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[7].firstTot)}</div>)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[7][4].value / population.sejong * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[7].secondTot / population.sejong * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[7][4].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[7].secondTot)}</div>)
                                         )
                                 }
                             </div>
@@ -241,15 +241,15 @@ const Vaccine =
                                 {
                                     menuOn === "1차 접종" ?
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[11][2].value / population.chungnam * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[11].firstTot / population.chungnam * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[11][2].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[11].firstTot)}</div>)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[11][4].value / population.chungnam * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[11].secondTot / population.chungnam * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[11][4].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[11].secondTot)}</div>)
                                         )
                                 }
                             </div>
@@ -258,15 +258,15 @@ const Vaccine =
                                 {
                                     menuOn === "1차 접종" ?
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[12][2].value / population.jeonbuk * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[12].firstTot / population.jeonbuk * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[12][2].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[12].firstTot)}</div>)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[12][4].value / population.jeonbuk * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[12].secondTot / population.jeonbuk * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[12][4].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[12].secondTot)}</div>)
                                         )
                                 })
                             </div>
@@ -275,15 +275,15 @@ const Vaccine =
                                 {
                                     menuOn === "1차 접종" ?
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[4][2].value / population.gwangju * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[4].firstTot / population.gwangju * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[4][2].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[4].firstTot)}</div>)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[4][4].value / population.gwangju * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[4].secondTot / population.gwangju * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[4][4].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[4].secondTot)}</div>)
                                         )
                                 }
                             </div>
@@ -292,15 +292,15 @@ const Vaccine =
                                 {
                                     menuOn === "1차 접종" ?
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[13][2].value / population.jeonnam * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[13].firstTot / population.jeonnam * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[13][2].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[13].firstTot)}</div>)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[13][4].value / population.jeonnam * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[13].secondTot / population.jeonnam * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[13][4].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[13].secondTot)}</div>)
                                         )
                                 }
                             </div>
@@ -309,15 +309,15 @@ const Vaccine =
                                 {
                                     menuOn === "1차 접종" ?
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[15][2].value / population.gyeongnam * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[15].firstTot / population.gyeongnam * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[15][2].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[15].firstTot)}</div>)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[15][4].value / population.gyeongnam * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[15].secondTot / population.gyeongnam * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[15][4].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[15].secondTot)}</div>)
                                         )
                                 }
                             </div>
@@ -326,15 +326,15 @@ const Vaccine =
                                 {
                                     menuOn === "1차 접종" ?
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[1][2].value / population.busan * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[1].firstTot / population.busan * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[1][2].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[1].firstTot)}</div>)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[1][4].value / population.busan * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[1].secondTot / population.busan * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[1][4].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[1].secondTot)}</div>)
                                         )
                                 }
                             </div>
@@ -343,15 +343,15 @@ const Vaccine =
                                 {
                                     menuOn === "1차 접종" ?
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[6][2].value / population.ulsan * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[6].firstTot / population.ulsan * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[6][2].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[6].firstTot)}</div>)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[6][4].value / population.ulsan * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[6].secondTot / population.ulsan * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[6][4].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[6].secondTot)}</div>)
                                         )
                                 }
                             </div>
@@ -360,15 +360,15 @@ const Vaccine =
                                 {
                                     menuOn === "1차 접종" ?
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[16][2].value / population.jeju * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[16].firstTot / population.jeju * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[16][2].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[16].firstTot)}</div>)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
-                                            (<div className="localBoxRate">{(anyVaccine[16][4].value / population.jeju * 100).toFixed(2)}%</div>)
+                                            (<div className="localBoxRate">{(anyVaccine[16].secondTot / population.jeju * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[16][4].value)}</div>)
+                                            (<div className="localBoxLevel">{insertDot(anyVaccine[16].secondTot)}</div>)
                                         )
                                 }
                             </div>
@@ -380,8 +380,3 @@ const Vaccine =
     };
 
 export default Vaccine;
-
-
-
-// https://nip.kdca.go.kr/irgd/cov19stats.do?list=all
-// https://nip.kdca.go.kr/irgd/cov19stats.do?list=sido
