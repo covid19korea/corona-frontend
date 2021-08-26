@@ -1,0 +1,33 @@
+name: corona-frontend build CI
+
+on:
+  pull_request:
+    branches: [ develop, master ]
+  push:
+    branches: [ develop, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-build-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.OS }}-build-
+            ${{ runner.OS }}-
+      - name: install dependencies
+        run: npm install
+
+      - name: install react-monent
+        run: yarn add react-moment
+
+      - name: install moment-timezone
+        run: yarn add moment-timezone
+
+      - name: npm build
+        run: CI= npm run build
