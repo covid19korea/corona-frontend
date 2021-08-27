@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Header from '../common/Header';
 import LiveClock from '../common/LiveClock';
 import PercentCircle from '../common/PercentCircle';
 import { MainBox, VaccineBox, VaccineMap, VaccineState } from './styles';
 import CountUp from 'react-countup';
-
 
 const Vaccine =
     ({
@@ -17,9 +16,6 @@ const Vaccine =
         population,
         insertDot,
     }) => {
-
-
-
         return (
             <MainBox>
                 <Header />
@@ -60,7 +56,6 @@ const Vaccine =
                             </div>
                         </div>
                     </VaccineState>
-
                     <VaccineMap>
                         <div className="vaccineMap_tit">시·도별 백신접종현황</div>
                         <div className="vaccineMap_option">
@@ -74,7 +69,6 @@ const Vaccine =
                                     <div className="menuTit" onClick={() => setMenuOn("접종 완료")}>접종 완료</div>
                                 </div>
                             </div>
-
                             <div className="vaccineMap_choicelist">
                                 <div className={choiceOn === "백분율" ? "vaccineMap_choice choiceOn" : "vaccineMap_choice"} onClick={() => setChoiceOn("백분율")}>
                                     <div className="choiceTit ">백분율</div>
@@ -94,6 +88,7 @@ const Vaccine =
                                     menuOn === "1차 접종" ?
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[8].firstTot / population.gyeonggi * 100).toFixed(2)}%</div>)
+
                                             :
                                             (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[8].firstTot} />)
                                         )

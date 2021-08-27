@@ -25,14 +25,6 @@ const VaccinePage = () => {
         }
     };
 
-    let insertDot = (value) => {
-        value = String(value);
-        if (value.length <= 3) {
-            return value;
-        }
-        return insertDot(value.slice(0, value.length - 3)) + ',' + value.slice(value.length - 3);
-    };
-
     useEffect(() => {
         const loadVaccineAll = async () => {
             const response = await axios.get(`${SERVER_URL}/v1/data/inoculation`);
@@ -48,6 +40,14 @@ const VaccinePage = () => {
         }
         loadVaccineAny();
     }, []);
+
+    let insertDot = (value) => {
+        value = String(value);
+        if (value.length <= 3) {
+            return value;
+        }
+        return insertDot(value.slice(0, value.length - 3)) + ',' + value.slice(value.length - 3);
+    };
 
     return (
         <>

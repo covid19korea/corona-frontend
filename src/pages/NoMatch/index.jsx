@@ -1,14 +1,11 @@
 import React from 'react';
-import { useLocation } from "react-router-dom";
+import { NoMatchBlock } from './styled';
 
 const NoMatchPage = () => {
-    let location = useLocation();
     return (
-        <div>
-            <h3>
-                No Match for <code>{location.pathname}</code>
-            </h3>
-        </div>
+        <NoMatchBlock>
+            <h3>404 Not Found</h3>
+        </NoMatchBlock>
     );
 };
 

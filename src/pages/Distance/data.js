@@ -108,7 +108,6 @@ export const areaInfo = {
     },
 };
 
-
 //거리두기 단계별 정보
 export const stageInfo = {
     "1단계": {

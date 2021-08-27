@@ -12,7 +12,6 @@ const Main = ({
     newConfirmedNum,
 }) => {
 
-    console.log("happy", covidState);
     if (covidOption === "신규 확진자순") {
         covidLocate.sort((a, b) => Number(a.incDec) > Number(b.incDec) ? -1 : 1);
     }
