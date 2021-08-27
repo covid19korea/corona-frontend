@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import Korea from '../components/Korea';
 import { useSelector } from 'react-redux';
+import { SERVER_URL } from '../constants';
 
 const KoreaContainer = () => {
     const [covidState, setCovidState] = useState(null);
@@ -22,7 +23,8 @@ const KoreaContainer = () => {
 
     useEffect(() => {
         const loadCovidState = async () => {
-            const response = await axios.get('http://3.34.132.140:8080/v1/data/infection');
+
+            const response = await axios.get(`${SERVER_URL}/v1/data/infection`);
             setCovidState(response.data);
         }
         loadCovidState();
@@ -30,7 +32,7 @@ const KoreaContainer = () => {
 
     useEffect(() => {
         const loadCovidLocate = async () => {
-            const response = await axios.get("http://3.34.132.140:8080/v1/data/infection-region");
+            const response = await axios.get(`${SERVER_URL}/v1/data/infection-region`);
             let locates = [];
 
             response.data.list.forEach((v, index) => {

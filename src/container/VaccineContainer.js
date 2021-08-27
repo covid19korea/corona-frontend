@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import Vaccine from '../components/Vaccine';
 import { useSelector } from 'react-redux';
+import { SERVER_URL } from '../constants';
 
 const VaccineContainer = () => {
     const [allVaccine, setAllVaccine] = useState(null);
@@ -54,7 +55,7 @@ const VaccineContainer = () => {
 
     useEffect(() => {
         const loadVaccineAll = async () => {
-            const response = await axios.get("http://3.34.132.140:8080/v1/data/inoculation");
+            const response = await axios.get(`${SERVER_URL}/v1/data/inoculation`);
             setAllVaccine(response.data);
         }
         loadVaccineAll();
@@ -62,7 +63,7 @@ const VaccineContainer = () => {
 
     useEffect(() => {
         const loadVaccineAny = async () => {
-            const response = await axios.get("http://3.34.132.140:8080/v1/data/inoculation-region");
+            const response = await axios.get(`${SERVER_URL}/v1/data/inoculation-region`);
             setAnyVaccine(response.data.list);
         }
         loadVaccineAny();
