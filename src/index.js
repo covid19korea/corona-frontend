@@ -6,7 +6,6 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from './module';
 
-
 const store = createStore(rootReducer, composeWithDevTools());
 
 ReactDOM.render(
