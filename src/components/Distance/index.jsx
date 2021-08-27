@@ -4,7 +4,6 @@ import LiveClock from '../common/LiveClock';
 import { MainBox, DistanceBox, DistanceState } from './styles';
 import { IoAlertCircleOutline } from "react-icons/io5";
 
-
 const Distance =
     ({
         distance,
