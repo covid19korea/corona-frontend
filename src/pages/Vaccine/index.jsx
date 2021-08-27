@@ -4,13 +4,13 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
-import Vaccine from '../../components/Vaccine';
+import Vaccine from '../../components/vaccine';
 import { SERVER_URL } from '../../constants';
+import { population } from './data';
 
 const VaccinePage = () => {
     const [allVaccine, setAllVaccine] = useState(null);
     const [anyVaccine, setAnyVaccine] = useState(null);
-
     const [menuOn, setMenuOn] = useState("1차 접종");
     const [choiceOn, setChoiceOn] = useState("백분율");
 
@@ -20,7 +20,6 @@ const VaccinePage = () => {
 
     if (allVaccine && anyVaccine) {
         const mapContent = document.querySelector('.vaccineMap_content');
-
         if (mapContent) {
             isContact ? (mapContent.style.zIndex = -1) : (mapContent.style.zIndex = 0);
         }
@@ -33,27 +32,6 @@ const VaccinePage = () => {
         }
         return insertDot(value.slice(0, value.length - 3)) + ',' + value.slice(value.length - 3);
     };
-
-    const population = {
-        total: 51672400,
-        seoul: 9565990,
-        busan: 3364358,
-        daegu: 2397646,
-        incheon: 2936367,
-        gwangju: 1442647,
-        daejeon: 1456107,
-        ulsan: 1126369,
-        sejong: 362995,
-        gyeonggi: 13500688,
-        gangwon: 1535530,
-        chungbuk: 1597503,
-        chungnam: 2117400,
-        jeonbuk: 1794345,
-        jeonnam: 1840921,
-        gyeongbuk: 2632401,
-        gyeongnam: 3325840,
-        jeju: 675293,
-    }
 
     useEffect(() => {
         const loadVaccineAll = async () => {
@@ -71,7 +49,6 @@ const VaccinePage = () => {
         loadVaccineAny();
     }, []);
 
-
     useEffect(() => {
         function numberCounter(target_frame, target_number) {
             this.count = 0;
@@ -83,7 +60,6 @@ const VaccinePage = () => {
         };
 
         numberCounter.prototype.counter = function () {
-
             var self = this;
             this.diff = this.target_count - this.count;
 
@@ -106,7 +82,6 @@ const VaccinePage = () => {
 
             for (let target of localBoxs) {
                 let value = Number(target.innerHTML.split("").filter(v => v !== ",").join(""));
-
                 new numberCounter(target, value);
             }
         }

@@ -3,7 +3,7 @@ import Header from '../common/Header';
 import LiveClock from '../common/LiveClock';
 import { CovidLocate, CovidState, KoreaBox, MainBox, NewCovid } from './styles';
 
-const Korea = ({
+const Main = ({
     covidState,
     covidLocate,
     covidOption,
@@ -156,4 +156,4 @@ const Korea = ({
     );
 };
 
-export default Korea;
+export default Main;

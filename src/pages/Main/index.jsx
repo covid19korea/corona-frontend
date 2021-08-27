@@ -4,14 +4,13 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
-import Korea from '../../components/Korea';
+import Main from '../../components/main';
 import { SERVER_URL } from '../../constants';
 
 const MainPage = () => {
     const [covidState, setCovidState] = useState(null);
     const [covidLocate, setCovidLocate] = useState([]);
     const [newConfirmedNum, setNewConfiremdNum] = useState(null);
-
     const [covidOption, setCovidOption] = useState("신규 확진자순");
 
     const { isContact } = useSelector(({ contactData }) => ({
@@ -25,7 +24,6 @@ const MainPage = () => {
 
     useEffect(() => {
         const loadCovidState = async () => {
-
             const response = await axios.get(`${SERVER_URL}/v1/data/infection`);
             setCovidState(response.data);
         }
@@ -62,7 +60,7 @@ const MainPage = () => {
                 covidState && covidLocate && newConfirmedNum
                     ?
                     (
-                        < Korea
+                        <Main
                             covidState={covidState}
                             covidLocate={covidLocate}
                             covidOption={covidOption}
