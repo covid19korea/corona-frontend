@@ -1,5 +1,5 @@
 import React from 'react';
-import HeaderContainer from '../../container/HeaderContainer';
+import Header from '../common/Header';
 import LiveClock from '../common/LiveClock';
 import { CovidLocate, CovidState, KoreaBox, MainBox, NewCovid } from './styles';
 
@@ -28,7 +28,7 @@ const Korea = ({
 
     return (
         <MainBox>
-            <HeaderContainer />
+            <Header />
             <KoreaBox>
                 <LiveClock />
                 <CovidState>

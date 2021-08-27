@@ -1,11 +1,13 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import LoadingSpinner from '../components/common/LoadingSpinner';
-import Korea from '../components/Korea';
+import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { SERVER_URL } from '../constants';
+import LoadingSpinner from '../../components/common/LoadingSpinner';
+import Korea from '../../components/Korea';
+import { SERVER_URL } from '../../constants';
 
-const KoreaContainer = () => {
+const MainPage = () => {
     const [covidState, setCovidState] = useState(null);
     const [covidLocate, setCovidLocate] = useState([]);
     const [newConfirmedNum, setNewConfiremdNum] = useState(null);
@@ -76,4 +78,4 @@ const KoreaContainer = () => {
     );
 };
 
-export default KoreaContainer;
+export default MainPage;

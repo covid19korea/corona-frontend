@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
-import DistancePage from '../pages/DistancePage';
-import KoreaPage from '../pages/KoreaPage';
+import DistancePage from '../pages/Distance';
+import MainPage from '../pages/Main';
 import NoMatchPage from '../pages/NoMatch';
-import VaccinePage from '../pages/VaccinePage';
+import VaccinePage from '../pages/Vaccine';
 import GlobalStyles from '../theme/GlobalStyle';
 
 const RootRoute = () => {
@@ -12,7 +12,7 @@ const RootRoute = () => {
         <BrowserRouter>
             <GlobalStyles />
             <Switch>
-                <Route component={KoreaPage} path='/' exact />
+                <Route component={MainPage} path='/' exact />
                 <Route component={DistancePage} path='/distance' exact />
                 <Route component={VaccinePage} path='/vaccine' exact />
 

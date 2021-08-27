@@ -1,8 +1,8 @@
 import React from 'react';
-import HeaderContainer from '../../container/HeaderContainer';
 import LiveClock from '../common/LiveClock';
 import { MainBox, DistanceBox, DistanceState } from './styles';
 import { IoAlertCircleOutline } from "react-icons/io5";
+import Header from '../common/Header';
 
 const Distance =
     ({
@@ -18,7 +18,7 @@ const Distance =
     }) => {
         return (
             <MainBox>
-                <HeaderContainer />
+                <Header />
                 <DistanceBox>
                     <LiveClock />
                     <DistanceState className="distanceState">

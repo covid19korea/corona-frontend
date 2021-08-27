@@ -1,11 +1,13 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import LoadingSpinner from '../components/common/LoadingSpinner';
-import Vaccine from '../components/Vaccine';
+import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { SERVER_URL } from '../constants';
+import LoadingSpinner from '../../components/common/LoadingSpinner';
+import Vaccine from '../../components/Vaccine';
+import { SERVER_URL } from '../../constants';
 
-const VaccineContainer = () => {
+const VaccinePage = () => {
     const [allVaccine, setAllVaccine] = useState(null);
     const [anyVaccine, setAnyVaccine] = useState(null);
 
@@ -134,4 +136,4 @@ const VaccineContainer = () => {
     );
 };
 
-export default VaccineContainer;
+export default VaccinePage;

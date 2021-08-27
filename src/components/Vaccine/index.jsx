@@ -1,5 +1,5 @@
 import React from 'react';
-import HeaderContainer from '../../container/HeaderContainer';
+import Header from '../common/Header';
 import LiveClock from '../common/LiveClock';
 import PercentCircle from '../common/PercentCircle';
 import { MainBox, VaccineBox, VaccineMap, VaccineState } from './styles';
@@ -17,7 +17,7 @@ const Vaccine =
     }) => {
         return (
             <MainBox>
-                <HeaderContainer />
+                <Header />
                 <VaccineBox>
                     <LiveClock />
                     <VaccineState>

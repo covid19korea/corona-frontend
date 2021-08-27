@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Distance from '../components/Distance';
 import { useSelector } from 'react-redux';
+import Distance from '../../components/Distance';
 
-const DistanceContainer = () => {
-
+const DistancePage = () => {
     const { isContact } = useSelector(({ contactData }) => ({
         isContact: contactData.contact
     }))
@@ -230,4 +229,4 @@ const DistanceContainer = () => {
     );
 };
 
-export default DistanceContainer;
+export default DistancePage;
