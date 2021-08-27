@@ -49,44 +49,6 @@ const VaccinePage = () => {
         loadVaccineAny();
     }, []);
 
-    useEffect(() => {
-        function numberCounter(target_frame, target_number) {
-            this.count = 0;
-            this.diff = 0;
-            this.target_count = target_number;
-            this.target_frame = target_frame;
-            this.timer = null;
-            this.counter();
-        };
-
-        numberCounter.prototype.counter = function () {
-            var self = this;
-            this.diff = this.target_count - this.count;
-
-            if (this.diff > 0) {
-                self.count += Math.ceil(this.diff / 2);
-            }
-
-            this.target_frame.innerHTML = this.count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-
-            if (this.count < this.target_count) {
-                this.timer = setTimeout(function () { self.counter(); }, 30);
-            }
-            else {
-                clearTimeout(this.timer);
-            }
-        };
-
-        if (menuOn) {
-            let localBoxs = Array.from(document.querySelectorAll('.localBoxLevel'));
-
-            for (let target of localBoxs) {
-                let value = Number(target.innerHTML.split("").filter(v => v !== ",").join(""));
-                new numberCounter(target, value);
-            }
-        }
-    }, [menuOn, choiceOn]);
-
     return (
         <>
             {
