@@ -6,7 +6,6 @@ export const LiveClockBox = styled.div`
     height:50px;
     align-items: center;
     background:#e9ecef;
-    /* background:black; */
 
     border-radius:10px;
     border:none;
@@ -14,8 +13,6 @@ export const LiveClockBox = styled.div`
     padding:10px;
     padding-left:20px;
     margin-bottom:30px;
-
-    /* color:white; */
 
     .clockTxtStart{
         padding-right:10px;

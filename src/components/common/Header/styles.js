@@ -1,12 +1,9 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 
 export const HeaderBox = styled.div`
     width:250px;
     position:fixed;
-    /* height:100%; */
-    /* border:1px solid gray; */
-
 
     .logoArea{
         display:flex;
@@ -25,7 +22,6 @@ export const HeaderBox = styled.div`
             margin-right:20px;
         }
     }
-
     .cateList{
         .cateItem{
             display:flex;
@@ -45,19 +41,16 @@ export const HeaderBox = styled.div`
                 font-weight: 700;
                 color:black;
             }
-
             img{
                 width: 35px;
                 height: 35px;
                 margin-right:25px;
             }
         }
-
         .menu_on{
             background-color:#ECEFF1;
             font-weight: 700;
             color:black;
-
         }
     }
 `;

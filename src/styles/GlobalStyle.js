@@ -20,6 +20,6 @@ const GlobalStyles = createGlobalStyle`
         border: none;
         background-color: transparent;
     }
-`;
+`
 
 export default GlobalStyles;

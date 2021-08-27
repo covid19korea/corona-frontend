@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ModalContainer, ModalContent } from './styles';
 import { AiOutlineClose } from "react-icons/ai";
 
@@ -22,7 +22,7 @@ const Modal =
                         <div className="modal_sub">
                             <div className="modal_subTxt">문의는 이메일로 부탁드려요</div>
                             <div className="modal_subEmail">
-                                <a href="mailto:covid.status.official@gmail.com">covid.status.official@gmail.com</a>
+                                <a href="mailto:covid19korea.official@gmail.com">covid19korea.official@gmail.com</a>
                             </div>
                         </div>
                     </div>
