@@ -4,14 +4,13 @@ import { Link, withRouter } from 'react-router-dom';
 import Modal from '../Modal';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { getContact } from '../../../module/contactData';
+import { getContact } from '../../../store/contactData';
 
 const Header = ({ match }) => {
     let urlProp;
     let url = match.url;
 
     const dispatch = useDispatch();
-
     const [modal, setModal] = useState(false);
 
     const onToggle = () => {
@@ -30,7 +29,6 @@ const Header = ({ match }) => {
             urlProp = "vaccine";
         }
     }
-
     urlCheck(url);
 
     useEffect(() => {
