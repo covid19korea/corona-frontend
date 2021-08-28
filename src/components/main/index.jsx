@@ -1,9 +1,9 @@
 import React from 'react';
-import HeaderContainer from '../../container/HeaderContainer';
+import Header from '../common/Header';
 import LiveClock from '../common/LiveClock';
 import { CovidLocate, CovidState, KoreaBox, MainBox, NewCovid } from './styles';
 
-const Korea = ({
+const Main = ({
     covidState,
     covidLocate,
     covidOption,
@@ -12,7 +12,6 @@ const Korea = ({
     newConfirmedNum,
 }) => {
 
-    console.log("happy", covidState);
     if (covidOption === "신규 확진자순") {
         covidLocate.sort((a, b) => Number(a.incDec) > Number(b.incDec) ? -1 : 1);
     }
@@ -28,7 +27,7 @@ const Korea = ({
 
     return (
         <MainBox>
-            <HeaderContainer />
+            <Header />
             <KoreaBox>
                 <LiveClock />
                 <CovidState>
@@ -156,4 +155,4 @@ const Korea = ({
     );
 };
 
-export default Korea;
+export default Main;

@@ -1,8 +1,9 @@
 import React from 'react';
-import HeaderContainer from '../../container/HeaderContainer';
+import Header from '../common/Header';
 import LiveClock from '../common/LiveClock';
 import PercentCircle from '../common/PercentCircle';
 import { MainBox, VaccineBox, VaccineMap, VaccineState } from './styles';
+import CountUp from 'react-countup';
 
 const Vaccine =
     ({
@@ -17,7 +18,7 @@ const Vaccine =
     }) => {
         return (
             <MainBox>
-                <HeaderContainer />
+                <Header />
                 <VaccineBox>
                     <LiveClock />
                     <VaccineState>
@@ -55,7 +56,6 @@ const Vaccine =
                             </div>
                         </div>
                     </VaccineState>
-
                     <VaccineMap>
                         <div className="vaccineMap_tit">시·도별 백신접종현황</div>
                         <div className="vaccineMap_option">
@@ -69,7 +69,6 @@ const Vaccine =
                                     <div className="menuTit" onClick={() => setMenuOn("접종 완료")}>접종 완료</div>
                                 </div>
                             </div>
-
                             <div className="vaccineMap_choicelist">
                                 <div className={choiceOn === "백분율" ? "vaccineMap_choice choiceOn" : "vaccineMap_choice"} onClick={() => setChoiceOn("백분율")}>
                                     <div className="choiceTit ">백분율</div>
@@ -89,14 +88,15 @@ const Vaccine =
                                     menuOn === "1차 접종" ?
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[8].firstTot / population.gyeonggi * 100).toFixed(2)}%</div>)
+
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[8].firstTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[8].firstTot} />)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[8].secondTot / population.gyeonggi * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[8].secondTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[8].secondTot} />)
                                         )
                                 }
                             </div>
@@ -107,13 +107,13 @@ const Vaccine =
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[3].firstTot / population.incheon * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[3].firstTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[3].firstTot} />)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[3].secondTot / population.incheon * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[3].secondTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[3].secondTot} />)
                                         )
                                 }
                             </div>
@@ -124,13 +124,13 @@ const Vaccine =
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[9].firstTot / population.gangwon * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[9].firstTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[9].firstTot} />)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[9].secondTot / population.gangwon * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[9].secondTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[9].secondTot} />)
                                         )
                                 }
                             </div>
@@ -141,13 +141,13 @@ const Vaccine =
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[0].firstTot / population.seoul * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[0].firstTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[0].firstTot} />)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[0].secondTot / population.seoul * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[0].secondTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[0].secondTot} />)
                                         )
                                 }
                             </div>
@@ -158,13 +158,13 @@ const Vaccine =
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[10].firstTot / population.chungbuk * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[10].firstTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[10].firstTot} />)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[10].secondTot / population.chungbuk * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[10].secondTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[10].secondTot} />)
                                         )
                                 }
                             </div>
@@ -175,13 +175,13 @@ const Vaccine =
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[14].firstTot / population.gyeongbuk * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[14].firstTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[14].firstTot} />)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[14].secondTot / population.gyeongbuk * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[14].secondTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[14].secondTot} />)
                                         )
                                 }
                             </div>
@@ -192,13 +192,13 @@ const Vaccine =
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[2].firstTot / population.daegu * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[2].firstTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[2].firstTot} />)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[2].secondTot / population.daegu * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[2].secondTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[2].secondTot} />)
                                         )
                                 }
                             </div>
@@ -209,13 +209,13 @@ const Vaccine =
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[5].firstTot / population.daejeon * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[5].firstTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[5].firstTot} />)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[5].secondTot / population.daejeon * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[5].secondTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[5].secondTot} />)
                                         )
                                 }
                             </div>
@@ -226,13 +226,13 @@ const Vaccine =
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[7].firstTot / population.sejong * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[7].firstTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[7].firstTot} />)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[7].secondTot / population.sejong * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[7].secondTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[7].secondTot} />)
                                         )
                                 }
                             </div>
@@ -243,13 +243,13 @@ const Vaccine =
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[11].firstTot / population.chungnam * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[11].firstTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[11].firstTot} />)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[11].secondTot / population.chungnam * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[11].secondTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[11].secondTot} />)
                                         )
                                 }
                             </div>
@@ -260,13 +260,13 @@ const Vaccine =
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[12].firstTot / population.jeonbuk * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[12].firstTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[12].firstTot} />)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[12].secondTot / population.jeonbuk * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[12].secondTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[12].secondTot} />)
                                         )
                                 })
                             </div>
@@ -277,13 +277,13 @@ const Vaccine =
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[4].firstTot / population.gwangju * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[4].firstTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[4].firstTot} />)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[4].secondTot / population.gwangju * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[4].secondTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[4].secondTot} />)
                                         )
                                 }
                             </div>
@@ -294,13 +294,13 @@ const Vaccine =
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[13].firstTot / population.jeonnam * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[13].firstTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[13].firstTot} />)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[13].secondTot / population.jeonnam * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[13].secondTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[13].secondTot} />)
                                         )
                                 }
                             </div>
@@ -311,13 +311,13 @@ const Vaccine =
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[15].firstTot / population.gyeongnam * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[15].firstTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[15].firstTot} />)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[15].secondTot / population.gyeongnam * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[15].secondTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[15].secondTot} />)
                                         )
                                 }
                             </div>
@@ -328,13 +328,13 @@ const Vaccine =
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[1].firstTot / population.busan * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[1].firstTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[1].firstTot} />)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[1].secondTot / population.busan * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[1].secondTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[1].secondTot} />)
                                         )
                                 }
                             </div>
@@ -345,13 +345,13 @@ const Vaccine =
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[6].firstTot / population.ulsan * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[6].firstTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[6].firstTot} />)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[6].secondTot / population.ulsan * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[6].secondTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[6].secondTot} />)
                                         )
                                 }
                             </div>
@@ -362,13 +362,13 @@ const Vaccine =
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[16].firstTot / population.jeju * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[16].firstTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[16].firstTot} />)
                                         )
                                         :
                                         (choiceOn === "백분율" ?
                                             (<div className="localBoxRate">{(anyVaccine[16].secondTot / population.jeju * 100).toFixed(2)}%</div>)
                                             :
-                                            (<div className="localBoxLevel">{insertDot(anyVaccine[16].secondTot)}</div>)
+                                            (<CountUp className="localBoxLevel" duration={1.5} end={anyVaccine[16].secondTot} />)
                                         )
                                 }
                             </div>
