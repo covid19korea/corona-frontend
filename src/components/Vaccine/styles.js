@@ -210,34 +210,31 @@ export const VaccineMap = styled.div`
             left:0;
 
             .localBoxTit{
-                /* background:#d0bfff; */
-                background:#ffa94d;
+                background:#d0bfff;
                 padding:2px;
                 font-weight:600;
                 color:#212529;
                 width:100%;
-                font-size:11px;
+                font-size:14px;
             }
 
             .localBoxLevel{
-                /* background:#e5dbff; */
-                background:#ffd8a8;
                 display:flex;
                 align-items: center;
                 justify-content: center;
+                background:#e5dbff;
                 color:#8D021F;
                 font-weight:800;
                 /* padding:6px 4px; */
-                font-size:12px;
+                font-size:11px;
                 height:25px;
             }
 
             .localBoxRate{
-                /* background:#e5dbff; */
-                background:#ffd8a8;
                 display:flex;
                 align-items: center;
                 justify-content: center;
+                background:#e5dbff;
                 color:#8D021F;
                 font-weight:800;
                 /* padding:6px 4px; */

@@ -106,7 +106,6 @@ export const DistanceState = styled.div`
             
                 .localBoxTit{
                     background:#ffa94d;
-
                     padding:2px;
                     font-weight:600;
                     color:#212529;
@@ -341,3 +340,4 @@ export const DistanceState = styled.div`
     }
 
 `;
+
