@@ -12,14 +12,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: install dependencies
-        run: npm install
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
 
-      - name: install react-monent
-        run: yarn add react-moment
+      - name: Install Dependencies and Surge
+        run: |
+          npm install
+          npm install surge --global
 
-      - name: install moment-timezone
-        run: yarn add moment-timezone
-
-      - name: npm build
-        run: CI= npm run build
+      - name: Build React Application
+        run: npm run build
