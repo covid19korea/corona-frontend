@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
-import Vaccine from '../../components/vaccine';
+import Vaccine from '../../components/Vaccine';
 import { GOOGLE_ANALYTICS_KEY, SERVER_URL } from '../../constants';
 import { population } from './data';
 import ReactGa from 'react-ga';

@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router';
 import { GOOGLE_ANALYTICS_KEY } from '../../constants';
 import { areaInfo, distance, stageInfo } from './data';
-import ReactGa from 'react-ga';
-import Distance from '../../components/distance';
+import ReactGa from 'react-ga'
+import Distance from '../../components/Distance';
 
 const DistancePage = () => {
     const [clickLocalBox, setClickLocalBox] = useState(null);
@@ -12,8 +12,8 @@ const DistancePage = () => {
     const [clickStageIdx, setClickStageIdx] = useState(null);
 
     const { isContact } = useSelector(({ contactData }) => ({
-        isContact: contactData.contact
-    }))
+        isContact: contactData.contact,
+    }));
 
     const mapContent = document.querySelector('.distance_content');
     if (mapContent) {
