@@ -2,7 +2,6 @@ import React from 'react';
 import { LiveClockBox } from './styles';
 import Clock from 'react-live-clock';
 
-
 const LiveClock = () => {
     return (
         <LiveClockBox>
