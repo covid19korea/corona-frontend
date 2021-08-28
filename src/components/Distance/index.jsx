@@ -1,6 +1,6 @@
 import React from 'react';
 import LiveClock from '../common/LiveClock';
-import { MainBox, DistanceBox, DistanceState } from './styles';
+import { MainBox, DistanceBox, DistanceState } from './styled';
 import { IoAlertCircleOutline } from "react-icons/io5";
 import Header from '../common/Header';
 
