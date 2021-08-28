@@ -1,6 +1,6 @@
 import React from 'react';
 import LiveClock from '../common/LiveClock';
-import { MainBox, DistanceBox, DistanceState } from './styles';
+import { MainBox, DistanceBox, DistanceState } from './styled';
 import { IoAlertCircleOutline } from "react-icons/io5";
 import Header from '../common/Header';
 
@@ -97,10 +97,6 @@ const Distance =
                                 <div className={clickLocalBox === "ulsan" ? "localBox ulsan menuOn" : "localBox ulsan"} onClick={() => onClickLocalBox("ulsan")}>
                                     <div className="localBoxTit">울산</div>
                                     <div className={`localBoxLevel level${distance.ulsan}`}>{distance.ulsan}</div>
-                                </div>
-                                <div className={clickLocalBox === "jeju" ? "localBox jeju menuOn" : "localBox jeju"} onClick={() => onClickLocalBox("jeju")}>
-                                    <div className="localBoxTit">제주</div>
-                                    <div className={`localBoxLevel level${distance.jeju}`}>{distance.jeju}</div>
                                 </div>
                             </div>
                         </div>
