@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router';
-import Distance from '../../components/distance';
 import { GOOGLE_ANALYTICS_KEY } from '../../constants';
 import { areaInfo, distance, stageInfo } from './data';
 import ReactGa from 'react-ga';
+import Distance from '../../components/distance';
 
 const DistancePage = () => {
     const [clickLocalBox, setClickLocalBox] = useState(null);
