@@ -137,7 +137,6 @@ const Distance =
                                         <div className="stageInfo_txt">지역을 포함하고 있습니다.</div>
                                     </>
                                 }
-
                             </div>
                             {
                                 clickStage &&
@@ -162,7 +161,6 @@ const Distance =
                                             <div>{stageInfo[clickStage].식당.main}</div>
                                         </div>
                                     </div>
-
                                     <div className="distance_local_list">
                                         <div className="distance_local_menu">
                                             <img src="/images/icons/club.png" alt="" />
@@ -172,7 +170,6 @@ const Distance =
                                             <div>{stageInfo[clickStage].유흥.main}</div>
                                         </div>
                                     </div>
-
                                     <div className="distance_local_list">
                                         <div className="distance_local_menu">
                                             <img src="/images/icons/micro.png" alt="" />
