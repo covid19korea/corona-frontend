@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../common/Header';
 import LiveClock from '../common/LiveClock';
 import PercentCircle from '../common/PercentCircle';
-import { MainBox, VaccineBox, VaccineMap, VaccineState } from './styles';
+import { MainBox, VaccineBox, VaccineMap, VaccineState } from './styled';
 import CountUp from 'react-countup';
 
 const Vaccine =
