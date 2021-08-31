@@ -29,7 +29,7 @@ const VaccinePage = () => {
 
     useEffect(() => {
         const loadVaccineAll = async () => {
-            const response = await axios.get(`${SERVER_URL}/v1/data/inoculation`);
+            const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/v1/data/inoculation`);
             setAllVaccine(response.data);
         }
         loadVaccineAll();
@@ -37,7 +37,7 @@ const VaccinePage = () => {
 
     useEffect(() => {
         const loadVaccineAny = async () => {
-            const response = await axios.get(`${SERVER_URL}/v1/data/inoculation-region`);
+            const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/v1/data/inoculation-region`);
             setAnyVaccine(response.data.list);
         }
         loadVaccineAny();
