@@ -9456,6 +9456,11 @@
   "resolved" "https://registry.npmjs.org/react-ga/-/react-ga-3.3.0.tgz"
   "version" "3.3.0"
 
+"react-ga4@^1.0.5":
+  "integrity" "sha512-rWpDdh5EeeEhKdkrcm/87UW8e9BqX3WEWv4f3sIm8qQ4xng+KCgAG8HmJ6GVAF5JVk9ssk1Ahf2ial7hfSAt/A=="
+  "resolved" "https://registry.npmjs.org/react-ga4/-/react-ga4-1.0.5.tgz"
+  "version" "1.0.5"
+
 "react-icons@^4.2.0":
   "integrity" "sha512-rmzEDFt+AVXRzD7zDE21gcxyBizD/3NqjbX6cmViAgdqfJ2UiLer8927/QhhrXQV7dEj/1EGuOTPp7JnLYVJKQ=="
   "resolved" "https://registry.npmjs.org/react-icons/-/react-icons-4.2.0.tgz"
