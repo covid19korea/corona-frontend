@@ -3,13 +3,14 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useLocation } from 'react-router';
+import { withRouter } from 'react-router';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
-import { GOOGLE_ANALYTICS_KEY, SERVER_URL } from '../../constants';
+import { GOOGLE_ANALYTICS_KEY } from '../../constants';
 import Main from '../../components/main';
 import ReactGa from 'react-ga'
 
 
+ReactGa.initialize(GOOGLE_ANALYTICS_KEY);
 
 const MainPage = () => {
     const [covidState, setCovidState] = useState(null);
@@ -28,7 +29,6 @@ const MainPage = () => {
 
     useEffect(() => {
         const loadCovidState = async () => {
-            // const response = await axios.get(`${SERVER_URL}/v1/data/infection`);
             const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/v1/data/infection`);
             setCovidState(response.data);
         }
@@ -59,18 +59,11 @@ const MainPage = () => {
         return insertDot(value.slice(0, value.length - 3)) + ',' + value.slice(value.length - 3);
     };
 
-    const usePageViews = () => {
-        let location = useLocation();
-        useEffect(() => {
-            if (!window.GA_INITIALIZED) {
-                ReactGa.initialize(GOOGLE_ANALYTICS_KEY);
-                window.GA_INITIALIZED = true;
-            }
-            ReactGa.set({ page: location.pathname });
-            ReactGa.pageview(location.pathname);
-        }, [location]);
-    };
-    usePageViews();
+
+    useEffect(() => {
+        ReactGa.pageview(window.location.pathname);
+    }, []);
+
 
     return (
         <>
@@ -93,4 +86,4 @@ const MainPage = () => {
     );
 };
 
-export default MainPage;
+export default withRouter(MainPage);

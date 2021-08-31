@@ -3,10 +3,9 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useLocation } from 'react-router';
+import { withRouter } from 'react-router';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
 import Vaccine from '../../components/Vaccine';
-import { GOOGLE_ANALYTICS_KEY, SERVER_URL } from '../../constants';
 import { population } from './data';
 import ReactGa from 'react-ga';
 
@@ -51,18 +50,9 @@ const VaccinePage = () => {
         return insertDot(value.slice(0, value.length - 3)) + ',' + value.slice(value.length - 3);
     };
 
-    const usePageViews = () => {
-        let location = useLocation();
-        useEffect(() => {
-            if (!window.GA_INITIALIZED) {
-                ReactGa.initialize(GOOGLE_ANALYTICS_KEY);
-                window.GA_INITIALIZED = true;
-            }
-            ReactGa.set({ page: location.pathname });
-            ReactGa.pageview(location.pathname);
-        }, [location]);
-    };
-    usePageViews();
+    useEffect(() => {
+        ReactGa.pageview(window.location.pathname);
+    }, []);
 
     return (
         <>
@@ -88,4 +78,4 @@ const VaccinePage = () => {
     );
 };
 
-export default VaccinePage;
+export default withRouter(VaccinePage);

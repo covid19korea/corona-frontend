@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useLocation } from 'react-router';
-import { GOOGLE_ANALYTICS_KEY } from '../../constants';
+import { withRouter } from 'react-router';
 import { areaInfo, distance, stageInfo } from './data';
 import ReactGa from 'react-ga'
 import Distance from '../../components/Distance';
@@ -42,18 +41,9 @@ const DistancePage = () => {
         }
     }, [clickLocalBox]);
 
-    const usePageViews = () => {
-        let location = useLocation();
-        useEffect(() => {
-            if (!window.GA_INITIALIZED) {
-                ReactGa.initialize(GOOGLE_ANALYTICS_KEY);
-                window.GA_INITIALIZED = true;
-            }
-            ReactGa.set({ page: location.pathname });
-            ReactGa.pageview(location.pathname);
-        }, [location]);
-    };
-    usePageViews();
+    useEffect(() => {
+        ReactGa.pageview(window.location.pathname);
+    }, []);
 
     return (
         <Distance
@@ -70,4 +60,4 @@ const DistancePage = () => {
     );
 };
 
-export default DistancePage;
+export default withRouter(DistancePage);
