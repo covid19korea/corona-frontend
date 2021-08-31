@@ -29,5 +29,5 @@ jobs:
       - name: install moment-timezone
         run: yarn add moment-timezone
 
-      - name: npm build
-        run: CI= npm run build
+      - name: npm build:dev
+        run: CI= npm run build:dev
