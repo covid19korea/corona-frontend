@@ -5,9 +5,11 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
-import Main from '../../components/main';
 import { GOOGLE_ANALYTICS_KEY, SERVER_URL } from '../../constants';
-import ReactGa from 'react-ga';
+import Main from '../../components/main';
+import ReactGa from 'react-ga'
+
+
 
 const MainPage = () => {
     const [covidState, setCovidState] = useState(null);
@@ -26,7 +28,8 @@ const MainPage = () => {
 
     useEffect(() => {
         const loadCovidState = async () => {
-            const response = await axios.get(`${SERVER_URL}/v1/data/infection`);
+            // const response = await axios.get(`${SERVER_URL}/v1/data/infection`);
+            const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/v1/data/infection`);
             setCovidState(response.data);
         }
         loadCovidState();
@@ -34,7 +37,7 @@ const MainPage = () => {
 
     useEffect(() => {
         const loadCovidLocate = async () => {
-            const response = await axios.get(`${SERVER_URL}/v1/data/infection-region`);
+            const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/v1/data/infection-region`);
             let locates = [];
 
             response.data.list.forEach((v, index) => {
