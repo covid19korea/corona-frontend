@@ -3,16 +3,16 @@ os: linux
 
 files:
   - source: /
-    destination: /home/ubuntu/corona-frontend-dev
+    destination: /home/ubuntu/corona-frontend-prd
 permissions:
-  - object: /home/ubuntu/corona-frontend-dev
+  - object: /home/ubuntu/corona-frontend-prd
     owner: ubuntu
-  - object: /home/ubuntu/corona-frontend-dev/*/**
+  - object: /home/ubuntu/corona-frontend-prd/*/**
     owner: ubuntu
 hooks:
   BeforeInstall:
-    - location: scripts/before-install-dev.sh
+    - location: scripts/before-install-prd.sh
   AfterInstall:
-    - location: scripts/after-install-dev.sh
+    - location: scripts/after-install-prd.sh
   ApplicationStart:
-    - location: scripts/application-start-dev.sh
+    - location: scripts/application-start-prd.sh
