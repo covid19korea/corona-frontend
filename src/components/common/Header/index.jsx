@@ -42,6 +42,7 @@ const Header = ({ match }) => {
         <HeaderBox>
             <Link to="/" className="logoArea">
                 <img src="/images/icons/covid_icon.png" alt="" />
+                {/* <img src="/images/icons/mainLogo.png" alt="" /> */}
                 <div>코로나 알리미</div>
             </Link>
 
