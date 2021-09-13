@@ -1,9 +1,6 @@
 name: corona-frontend dev server CD
 
 on:
-  pull_request:
-    types: [ closed ]
-    branches: [ develop ]
   push:
     branches: [ develop ]
 
@@ -12,7 +9,6 @@ jobs:
   build:
     name: build and zip
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged
 
     steps:
       - uses: actions/checkout@v2
