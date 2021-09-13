@@ -3,8 +3,6 @@ name: corona-frontend build CI
 on:
   pull_request:
     branches: [ develop, master ]
-  push:
-    branches: [ develop, master ]
 
 jobs:
   build:
