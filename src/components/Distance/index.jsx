@@ -98,6 +98,10 @@ const Distance =
                                     <div className="localBoxTit">울산</div>
                                     <div className={`localBoxLevel level${distance.ulsan}`}>{distance.ulsan}</div>
                                 </div>
+                                <div className={clickLocalBox === "jeju" ? "localBox jeju menuOn" : "localBox jeju"} onClick={() => onClickLocalBox("jeju")}>
+                                    <div className="localBoxTit">제주</div>
+                                    <div className={`localBoxLevel level${distance.jeju}`}>{distance.jeju}</div>
+                                </div>
                             </div>
                         </div>
                         <div className="distance_subInfo">
