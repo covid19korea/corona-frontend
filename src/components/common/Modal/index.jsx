@@ -2,7 +2,7 @@ import React from 'react';
 import { ModalContainer, ModalContent } from './styles';
 import { AiOutlineClose } from "react-icons/ai";
 
-const Modal =
+const Modal = 
     ({
         onToggle,
     }) => {

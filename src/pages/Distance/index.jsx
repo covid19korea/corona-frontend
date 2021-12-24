@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { withRouter } from 'react-router';
-import { areaInfo, distance, stageInfo } from './data';
 import ReactGa from 'react-ga'
 import Distance from '../../components/Distance';
+import { AREAINFO, DISTANCE,  STAGEINFO } from '../../constants';
 
 const DistancePage = () => {
     const [clickLocalBox, setClickLocalBox] = useState(null);
@@ -47,11 +47,11 @@ const DistancePage = () => {
 
     return (
         <Distance
-            distance={distance}
+            distance={DISTANCE}
             onClickLocalBox={onClickLocalBox}
             clickLocalBox={clickLocalBox}
-            areaInfo={areaInfo}
-            stageInfo={stageInfo}
+            areaInfo={AREAINFO}
+            stageInfo={STAGEINFO}
             clickStage={clickStage}
             setClickStage={setClickStage}
             clickStageIdx={clickStageIdx}

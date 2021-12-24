@@ -104,12 +104,9 @@ export const CovidLocate = styled.div`
       .covidLocate_dataLists {
         display: flex;
         flex-direction: column;
-        /* border:1px solid gray; */
         width: 100%;
 
         .covidLocate_dataItemBox {
-          /* border:1px solid red; */
-          /* width:550px; */
           width: 100%;
           display: flex;
           justify-content: space-between;
@@ -120,7 +117,6 @@ export const CovidLocate = styled.div`
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            /* border:1px solid gray; */
 
             .covidLocate_dataItemTit {
               font-size: 14px;
