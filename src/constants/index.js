@@ -1,5 +1,3 @@
-export const GOOGLE_ANALYTICS_KEY = "G-C63HNJPW9N";
-
 //시∙도별 거리두기 단계 데이터
 export const DISTANCE = Object.freeze({
   gyeonggi: 4,

@@ -5,12 +5,11 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { withRouter } from 'react-router';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
-import { GOOGLE_ANALYTICS_KEY } from '../../constants';
 import Main from '../../components/main';
 import ReactGa from 'react-ga'
 
 
-ReactGa.initialize(GOOGLE_ANALYTICS_KEY);
+ReactGa.initialize(process.env.GOOGLE_ANALYTICS_KEY);
 
 const MainPage = () => {
     const [covidLocate, setCovidLocate] = useState([]);
