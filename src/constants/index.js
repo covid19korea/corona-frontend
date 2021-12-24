@@ -1,7 +1,7 @@
 export const GOOGLE_ANALYTICS_KEY = "G-C63HNJPW9N";
 
 //시∙도별 거리두기 단계 데이터
-export const DISTANCE = {
+export const DISTANCE = Object.freeze({
   gyeonggi: 4,
   incheon: 4,
   seoul: 4,
@@ -19,10 +19,10 @@ export const DISTANCE = {
   busan: 3,
   ulsan: 3,
   jeju: 3,
-};
+});
 
 // 시∙도별 거리두기 단계 정보
-export const AREAINFO = {
+export const AREAINFO = Object.freeze({
   gyeonggi: {
     stage: [4],
     info: ["경기전지역 4단계"],
@@ -108,10 +108,10 @@ export const AREAINFO = {
     info: ["제주전지역 3단계"],
     name: "제주",
   },
-};
+});
 
 //거리두기 단계별 정보
-export const STAGEINFO = {
+export const STAGEINFO = Object.freeze({
   "1단계": {
     모임: {
       main: "방역수칙 준수",
@@ -172,10 +172,10 @@ export const STAGEINFO = {
       main: "접종증명·음성확인제 도입 · 시간제한 해제",
     },
   },
-};
+});
 
 // 시∙도별 인구수
-export const POPULATION = {
+export const POPULATION = Object.freeze({
   total: 51672400,
   seoul: 9565990,
   busan: 3364358,
@@ -194,4 +194,4 @@ export const POPULATION = {
   gyeongbuk: 2632401,
   gyeongnam: 3325840,
   jeju: 675293,
-};
+});
