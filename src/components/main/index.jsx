@@ -1,10 +1,9 @@
 import React from 'react';
 import Header from '../common/Header';
 import LiveClock from '../common/LiveClock';
-import { CovidLocate, CovidState, KoreaBox, MainBox, NewCovid } from './styles';
+import { CovidLocate,  KoreaBox, MainBox, NewCovid } from './styles';
 
 const Main = ({
-    covidState,
     covidLocate,
     covidOption,
     setCovidOption,
@@ -30,76 +29,6 @@ const Main = ({
             <Header />
             <KoreaBox>
                 <LiveClock />
-                <CovidState>
-                    <div className="covidState_tit">감염현황</div>
-                    <div className="covidState_lists">
-                        <div className="covidState_item">
-                            <div className="covidState_itemTit">확진자</div>
-                            <div className="covidState_itemValue">{insertDot(covidState.decideCnt)}</div>
-                            <div className="covidState_rate">
-                                <div className="covidState_itemComp">{insertDot(String(Math.abs(covidState.decideCntUp)))}</div>
-                                {
-                                    covidState.decideCntUp > 0 ?
-                                        (<img className="covidState_img" src="/images/icons/icoUp.png" alt="" />)
-                                        :
-                                        (<img className="covidState_img" src="/images/icons/icoDown.png" alt="" />)
-                                }
-                            </div>
-                        </div>
-                        <div className="covidState_item">
-                            <div className="covidState_itemTit">격리 해제자</div>
-                            <div className="covidState_itemValue">{insertDot(covidState.clearCnt)}</div>
-                            <div className="covidState_rate">
-                                <div className="covidState_itemComp">{insertDot(String(Math.abs(covidState.clearCntUp)))}</div>
-                                {
-                                    covidState.clearCntUp > 0 ?
-                                        (<img className="covidState_img" src="/images/icons/icoUp.png" alt="" />)
-                                        :
-                                        (<img className="covidState_img" src="/images/icons/icoDown.png" alt="" />)
-                                }
-                            </div>
-                        </div>
-                        <div className="covidState_item">
-                            <div className="covidState_itemTit">검사 진행자</div>
-                            <div className="covidState_itemValue">{insertDot(covidState.examCnt)}</div>
-                            <div className="covidState_rate">
-                                <div className="covidState_itemComp">{insertDot(String(Math.abs(covidState.examCntUp)))}</div>
-                                {
-                                    covidState.examCntUp > 0 ?
-                                        (<img className="covidState_img" src="/images/icons/icoUp.png" alt="" />)
-                                        :
-                                        (<img className="covidState_img" src="/images/icons/icoDown.png" alt="" />)
-                                }
-                            </div>
-                        </div>
-                        <div className="covidState_item">
-                            <div className="covidState_itemTit">치료중 환자</div>
-                            <div className="covidState_itemValue">{insertDot(covidState.careCnt)}</div>
-                            <div className="covidState_rate">
-                                <div className="covidState_itemComp">{insertDot(String(Math.abs(covidState.careCntUp)))}</div>
-                                {
-                                    covidState.careCntUp > 0 ?
-                                        (<img className="covidState_img" src="/images/icons/icoUp.png" alt="" />)
-                                        :
-                                        (<img className="covidState_img" src="/images/icons/icoDown.png" alt="" />)
-                                }
-                            </div>
-                        </div>
-                        <div className="covidState_item">
-                            <div className="covidState_itemTit">사망자</div>
-                            <div className="covidState_itemValue">{insertDot(covidState.deathCnt)}</div>
-                            <div className="covidState_rate">
-                                <div className="covidState_itemComp">{insertDot(String(Math.abs(covidState.deathCntUp)))}</div>
-                                {
-                                    covidState.deathCntUp > 0 ?
-                                        (<img className="covidState_img" src="/images/icons/icoUp.png" alt="" />)
-                                        :
-                                        (<img className="covidState_img" src="/images/icons/icoDown.png" alt="" />)
-                                }
-                            </div>
-                        </div>
-                    </div>
-                </CovidState>
                 <NewCovid>
                     <div className="newCovid_tit">오늘 신규 확진자 수는</div>
                     <div className="newCovid_value">{newConfirmedNum}</div>

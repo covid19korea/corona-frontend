@@ -13,7 +13,6 @@ import ReactGa from 'react-ga'
 ReactGa.initialize(GOOGLE_ANALYTICS_KEY);
 
 const MainPage = () => {
-    const [covidState, setCovidState] = useState(null);
     const [covidLocate, setCovidLocate] = useState([]);
     const [newConfirmedNum, setNewConfiremdNum] = useState(null);
     const [covidOption, setCovidOption] = useState("신규 확진자순");
@@ -26,14 +25,6 @@ const MainPage = () => {
     if (mapContent) {
         isContact ? (mapContent.style.zIndex = -1) : (mapContent.style.zIndex = 0);
     }
-
-    useEffect(() => {
-        const loadCovidState = async () => {
-            const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/v1/data/infection`);
-            setCovidState(response.data);
-        }
-        loadCovidState();
-    }, []);
 
     useEffect(() => {
         const loadCovidLocate = async () => {
@@ -68,11 +59,10 @@ const MainPage = () => {
     return (
         <>
             {
-                covidState && covidLocate && newConfirmedNum
+                covidLocate && newConfirmedNum
                     ?
                     (
                         <Main
-                            covidState={covidState}
                             covidLocate={covidLocate}
                             covidOption={covidOption}
                             newConfirmedNum={newConfirmedNum}
