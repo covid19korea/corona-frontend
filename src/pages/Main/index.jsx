@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { withRouter } from 'react-router';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
-import Main from '../../components/Main';
+import Main from '../../components/main';
 import ReactGa from 'react-ga'
 import { insertDot } from '../../utils';
 
