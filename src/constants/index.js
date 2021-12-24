@@ -1,3 +1,15 @@
+export const insertDot = (value) => {
+  value = String(value);
+  if (value.length <= 3) {
+    return value;
+  }
+  return (
+    insertDot(value.slice(0, value.length - 3)) +
+    "," +
+    value.slice(value.length - 3)
+  );
+};
+
 //시∙도별 거리두기 단계 데이터
 export const DISTANCE = Object.freeze({
   gyeonggi: 4,

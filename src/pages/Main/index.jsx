@@ -7,7 +7,7 @@ import { withRouter } from 'react-router';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
 import Main from '../../components/main';
 import ReactGa from 'react-ga'
-
+import { insertDot } from '../../constants';
 
 ReactGa.initialize(process.env.GOOGLE_ANALYTICS_KEY);
 
@@ -28,7 +28,7 @@ const MainPage = () => {
     useEffect(() => {
         const loadCovidLocate = async () => {
             const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/v1/data/infection-region`);
-            let locates = [];
+            const locates = [];
 
             response.data.list.forEach((v, index) => {
                 index >= 1 && index <= 17 && locates.push(v);
@@ -41,33 +41,22 @@ const MainPage = () => {
         loadCovidLocate();
     }, []);
 
-    let insertDot = (value) => {
-        value = String(value);
-        if (value.length <= 3) {
-            return value;
-        }
-        return insertDot(value.slice(0, value.length - 3)) + ',' + value.slice(value.length - 3);
-    };
-
 
     useEffect(() => {
         ReactGa.pageview(window.location.pathname);
     }, []);
-
 
     return (
         <>
             {
                 covidLocate && newConfirmedNum
                     ?
-                    (
                         <Main
                             covidLocate={covidLocate}
                             covidOption={covidOption}
                             newConfirmedNum={newConfirmedNum}
                             setCovidOption={setCovidOption}
                             insertDot={insertDot} />
-                    )
                     :
                     (<LoadingSpinner />)
             }

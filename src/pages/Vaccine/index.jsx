@@ -7,7 +7,7 @@ import { withRouter } from 'react-router';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
 import Vaccine from '../../components/Vaccine';
 import ReactGa from 'react-ga';
-import {POPULATION} from '../../constants';
+import {insertDot, POPULATION} from '../../constants';
 
 const VaccinePage = () => {
     const [allVaccine, setAllVaccine] = useState(null);
@@ -42,14 +42,6 @@ const VaccinePage = () => {
         loadVaccineAny();
     }, []);
 
-    let insertDot = (value) => {
-        value = String(value);
-        if (value.length <= 3) {
-            return value;
-        }
-        return insertDot(value.slice(0, value.length - 3)) + ',' + value.slice(value.length - 3);
-    };
-
     useEffect(() => {
         ReactGa.pageview(window.location.pathname);
     }, []);
@@ -58,21 +50,18 @@ const VaccinePage = () => {
         <>
             {
                 allVaccine && anyVaccine ?
-                    (
-                        < Vaccine
-                            allVaccine={allVaccine}
-                            anyVaccine={anyVaccine}
-                            setMenuOn={setMenuOn}
-                            menuOn={menuOn}
-                            setChoiceOn={setChoiceOn}
-                            choiceOn={choiceOn}
-                            population={POPULATION}
-                            insertDot={insertDot}
-                        />)
+                    <Vaccine
+                        allVaccine={allVaccine}
+                        anyVaccine={anyVaccine}
+                        setMenuOn={setMenuOn}
+                        menuOn={menuOn}
+                        setChoiceOn={setChoiceOn}
+                        choiceOn={choiceOn}
+                        population={POPULATION}
+                        insertDot={insertDot}
+                    /> 
                     :
-                    (
-                        <LoadingSpinner />
-                    )
+                    <LoadingSpinner />
             }
         </>
     );

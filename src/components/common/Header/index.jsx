@@ -7,8 +7,8 @@ import { useState } from 'react';
 import { getContact } from '../../../store/contactData';
 
 const Header = ({ match }) => {
+    const url = match.url;
     let urlProp;
-    let url = match.url;
 
     const dispatch = useDispatch();
     const [modal, setModal] = useState(false);
@@ -19,21 +19,16 @@ const Header = ({ match }) => {
     }
 
     const urlCheck = (url) => {
-        if (url === "/") {
-            urlProp = "korea";
-        }
-        else if (url === "/distance") {
-            urlProp = "distance";
-        }
-        else if (url === '/vaccine') {
-            urlProp = "vaccine";
-        }
+        if (url === "/") urlProp = "korea";
+        if (url === "/distance") urlProp = "distance";
+        if (url === '/vaccine') urlProp = "vaccine";
     }
+    
     urlCheck(url);
 
     useEffect(() => {
         if (urlProp) {
-            let menu = document.querySelector(`#${urlProp}`);
+            const menu = document.getElementById(`${urlProp}`);
             menu.classList.add("menu_on");
         }
     }, [urlProp]);
@@ -42,7 +37,6 @@ const Header = ({ match }) => {
         <HeaderBox>
             <Link to="/" className="logoArea">
                 <img src="/images/icons/covid_icon.png" alt="" />
-                {/* <img src="/images/icons/mainLogo.png" alt="" /> */}
                 <div>코로나 알리미</div>
             </Link>
 

@@ -14,13 +14,13 @@ const Main = ({
     if (covidOption === "신규 확진자순") {
         covidLocate.sort((a, b) => Number(a.incDec) > Number(b.incDec) ? -1 : 1);
     }
-    else if (covidOption === "누적 확진자순") {
+    if (covidOption === "누적 확진자순") {
         covidLocate.sort((a, b) => Number(a.defCnt) > Number(b.defCnt) ? -1 : 1);
     }
-    else if (covidOption === "격리 해제자순") {
+    if (covidOption === "격리 해제자순") {
         covidLocate.sort((a, b) => Number(a.isolClearCnt) > Number(b.isolClearCnt) ? -1 : 1);
     }
-    else {
+    if (covidOption === "사망자순") {
         covidLocate.sort((a, b) => Number(a.deathCnt) > Number(b.deathCnt) ? -1 : 1);
     }
 
@@ -54,7 +54,6 @@ const Main = ({
                                         <img src={v.imgURL} alt="" />
                                     </div>
                                     <div className="covidLocate_dataLists">
-                                        {/* <div className="covidLocate_name">{v[3].value}</div> */}
                                         <div className="covidLocate_dataItemBox">
                                             <div className="covidLocate_dataItem newCovid">
                                                 <div className="covidLocate_dataItemTit">신규 확진자</div>

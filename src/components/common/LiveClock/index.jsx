@@ -10,5 +10,6 @@ const LiveClock = () => {
             <div className="clockTxtEnd">입니다.</div>
         </LiveClockBox>
     );
-};
+};  
+
 export default LiveClock;
