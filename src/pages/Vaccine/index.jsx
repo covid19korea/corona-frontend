@@ -7,7 +7,8 @@ import { withRouter } from 'react-router';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
 import Vaccine from '../../components/Vaccine';
 import ReactGa from 'react-ga';
-import {insertDot, POPULATION} from '../../constants';
+import {POPULATION} from '../../constants';
+import { insertDot } from '../../utils';
 
 const VaccinePage = () => {
     const [allVaccine, setAllVaccine] = useState(null);

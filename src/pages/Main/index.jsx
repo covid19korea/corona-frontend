@@ -5,9 +5,9 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { withRouter } from 'react-router';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
-import Main from '../../components/main';
+import Main from '../../components/Main';
 import ReactGa from 'react-ga'
-import { insertDot } from '../../constants';
+import { insertDot } from '../../utils';
 
 ReactGa.initialize(process.env.GOOGLE_ANALYTICS_KEY);
 

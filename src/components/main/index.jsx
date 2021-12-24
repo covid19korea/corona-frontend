@@ -42,7 +42,6 @@ const Main = ({
                             <option value="누적 확진자순">누적 확진자순</option>
                             <option value="격리 해제자순">격리 해제자순</option>
                             <option value="사망자순">사망자순</option>
-
                         </select>
                     </div>
                     <div className="covidLocate_lists">

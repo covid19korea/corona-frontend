@@ -1,15 +1,3 @@
-export const insertDot = (value) => {
-  value = String(value);
-  if (value.length <= 3) {
-    return value;
-  }
-  return (
-    insertDot(value.slice(0, value.length - 3)) +
-    "," +
-    value.slice(value.length - 3)
-  );
-};
-
 //시∙도별 거리두기 단계 데이터
 export const DISTANCE = Object.freeze({
   gyeonggi: 4,
@@ -204,4 +192,31 @@ export const POPULATION = Object.freeze({
   gyeongbuk: 2632401,
   gyeongnam: 3325840,
   jeju: 675293,
+});
+
+export const LISTS = Object.freeze({
+  areaList: [
+    { engName: "gyeonggi", korName: "경기", position: 8 },
+    { engName: "incheon", korName: "인천", position: 3 },
+    { engName: "gangwon", korName: "강원", position: 9 },
+    { engName: "seoul", korName: "서울", position: 0 },
+    { engName: "chungbuk", korName: "충북", position: 10 },
+    { engName: "gyeongbuk", korName: "경북", position: 14 },
+    { engName: "daegu", korName: "대구", position: 2 },
+    { engName: "daejeon", korName: "대전", position: 5 },
+    { engName: "sejong", korName: "세종", position: 7 },
+    { engName: "chungnam", korName: "충남", position: 11 },
+    { engName: "jeonbuk", korName: "전북", position: 12 },
+    { engName: "gwangju", korName: "광주", position: 4 },
+    { engName: "jeonnam", korName: "전남", position: 13 },
+    { engName: "gyeongnam", korName: "경남", position: 15 },
+    { engName: "busan", korName: "부산", position: 1 },
+    { engName: "ulsan", korName: "울산", position: 6 },
+    { engName: "jeju", korName: "제주", position: 16 },
+  ],
+  menuList: [
+    { engName: "korea", korName: "국내", url: "/" },
+    { engName: "distance", korName: "거리두기", url: "/distance" },
+    { engName: "vaccine", korName: "백신접종", url: "/vaccine" },
+  ],
 });

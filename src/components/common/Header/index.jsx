@@ -5,6 +5,7 @@ import Modal from '../Modal';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { getContact } from '../../../store/contactData';
+import { LISTS } from '../../../constants';
 
 const Header = ({ match }) => {
     const url = match.url;
@@ -39,21 +40,16 @@ const Header = ({ match }) => {
                 <img src="/images/icons/covid_icon.png" alt="" />
                 <div>코로나 알리미</div>
             </Link>
-
             <div className="cateList">
-                <Link to="/" id="korea" className="cateItem">
-                    <img src="/images/logo/korea.png" alt="" />
-                    <div>국내</div>
-                </Link>
-                <Link to="/distance" id="distance" className="cateItem">
-                    <img src="/images/logo/distance.png" alt="" />
-                    <div>거리두기</div>
-                </Link>
-                <Link to="/vaccine" id="vaccine" className="cateItem">
-                    <img src="/images/logo/injection.png" alt="" />
-                    <div>백신접종</div>
-                </Link>
-                <Link onClick={onToggle} id="vaccine" className="cateItem">
+                {
+                    LISTS.menuList.map(menu=>
+                        <Link to={menu.url} id={menu.engName} className="cateItem">
+                            <img src={`/images/logo/${menu.engName}.png`} alt="" />
+                            <div>{menu.korName}</div>
+                        </Link>
+                    )
+                }
+                <Link onClick={onToggle} className="cateItem">
                     <img src="/images/logo/question.png" alt="" />
                     <div>문의하기</div>
                 </Link>
