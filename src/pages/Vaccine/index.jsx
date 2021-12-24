@@ -6,8 +6,8 @@ import { useSelector } from 'react-redux';
 import { withRouter } from 'react-router';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
 import Vaccine from '../../components/Vaccine';
-import { population } from './data';
 import ReactGa from 'react-ga';
+import {POPULATION} from '../../constants';
 
 const VaccinePage = () => {
     const [allVaccine, setAllVaccine] = useState(null);
@@ -66,7 +66,7 @@ const VaccinePage = () => {
                             menuOn={menuOn}
                             setChoiceOn={setChoiceOn}
                             choiceOn={choiceOn}
-                            population={population}
+                            population={POPULATION}
                             insertDot={insertDot}
                         />)
                     :
