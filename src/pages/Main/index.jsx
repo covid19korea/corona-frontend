@@ -9,7 +9,7 @@ import Main from '../../components/main';
 import ReactGa from 'react-ga'
 import { insertDot } from '../../utils';
 
-ReactGa.initialize(process.env.GOOGLE_ANALYTICS_KEY);
+ReactGa.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS_KEY);
 
 const MainPage = () => {
     const [covidLocate, setCovidLocate] = useState([]);
