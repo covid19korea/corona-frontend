@@ -29,12 +29,12 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "env-cmd -f ./.prd.env react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build:dev": "env-cmd -f ./.dev.env react-scripts build",
-    "build:prd": "env-cmd -f ./.prd.env react-scripts build"
+    "build:dev": "react-scripts build",
+    "build:prd": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
